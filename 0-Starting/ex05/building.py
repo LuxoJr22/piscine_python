@@ -2,17 +2,16 @@ import sys
 
 
 def main():
-    """Program which takes a single string argument and displays the sums of its upper-case characters, lower-case characters, punctuation characters, digits and spaces.""""
+    """Program which takes a single string argument and displays the sums of its upper-case characters, lower-case characters, punctuation characters, digits and spaces."""
 
     if len(sys.argv) > 2:
         print("AssertionError: more than one argument is provided")
         return
     if len(sys.argv) < 2:
-        print("You have to provide a string")
-        return
-    arg = sys.argv[1]
+        arg = sys.stdin.read()
+    else:
+        arg = sys.argv[1]
     punctuation = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
-    print(arg)
 
     print(f"The text contains {len(arg)} characters:")
     print(f"{sum(1 for upper in arg if upper.isupper())} upper letters")
