@@ -25,6 +25,7 @@ class Lannister(Character):
 		self.eyes = 'blue'
 		self.hairs = 'light'
 
+	@staticmethod
 	def create_lannister(name, alive=True):
 		"""Create an instance of Lannister"""
 		return Lannister(name, alive)
