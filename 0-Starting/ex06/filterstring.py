@@ -1,11 +1,9 @@
 import sys
 
 def main():
-    if len(sys.argv) > 3:
-        print("AssertionError: more than 2 arguments are provided")
-        return
-    if len(sys.argv) < 3:
-        print("You have to provide a string and an int")
+    """Program that output a list of words from S that have a length greater than N. (with S and N passed as arguments)"""
+    if len(sys.argv) != 3 or type(sys.argv[1]) != str:
+        print("AssertionError: the arguments are bad")
         return
     arg = sys.argv[1]
     args = sys.argv[2]
@@ -13,11 +11,12 @@ def main():
     try:
         nb = int(args)
     except ValueError:
-        print("AssertionError: 2nd argument is not an integer")
+        print("AssertionError: the arguments are bad")
         return
 
     words = arg.split()
-    ret = [x for x in words if len(x) >= nb]
+    is_len = lambda a : len(a) > nb
+    ret = [x for x in words if is_len(x)]
     print(ret)
 
 

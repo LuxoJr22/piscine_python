@@ -1,0 +1,14 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ft_package"
+version = "0.0.1"
+authors = [
+  { name="mboyer"}, {email="mboyer@42.fr" },
+]
+description = "A sample text package"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
